@@ -37,6 +37,22 @@ public static void validlast(String str1)
 	
 
 }
+public static void validemail(String str1)
+{
+	String regex="[a-zA-Z0-9.][a-zA-Z0-9]@[a-zA-Z]+([.][a-zA-Z0-9]+)+";
+	Pattern p=Pattern.compile(regex);
+	Matcher m=p.matcher(str1);
+	if(m.find())
+	{
+		System.out.println("yes valid emailid ");
+	}
+	else 
+	{
+		System.out.println(" no not a valid mailid ");
+	}
+	
+
+}
 
 	
 	public static void main(String[] args) {
@@ -46,9 +62,12 @@ public static void validlast(String str1)
 		String firstname=s.nextLine();
 		System.out.println("please enter the lastname ");
 		String lastname=s.nextLine();
+		System.out.println("please enter the emailid");
+		String email=s.nextLine();
 		 validfirst(firstname);
 		 
 		 validlast(lastname);
+		 validemail(email);
 		 }
 	}
 		
